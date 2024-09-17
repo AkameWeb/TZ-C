@@ -1,30 +1,34 @@
 #include<iostream>
-
+#include<vector>
+#include<stack>
 #define PI 3.14
-#define Fun(x,y)((x)*(y));
+//#define Fun(x,y)((x)*(y));
 
 using namespace std;
 
+class Car{
+    public: 
+    string model, brand;
+    int distant = 0;
+
+    void drive(int millit){
+       distant+= millit;
+    }
+
+    void Fun(){
+        cout << model<<endl;
+        cout << brand<<endl;
+        cout << distant << endl;
+    }
+};
 int main(){
-    const int ROW = 5;
-    const int COL = 5;
+    Car car;
+    car.brand = "BMW";
+    car.model = "F-90";
+    const int distant = 100;
+    car.drive(distant);
 
-    int arr[ROW][COL];
+    car.Fun();
 
-    for(int i =0; i < ROW; i++){
-        for(int j =0; j< COL; j++){
-            arr[i][j] = rand() % 10;
-            
-        }
-    }   
-
-    for (int i =0; i < ROW; i++){
-        cout<< i << " colonc" << endl;
-        for(int j =0; j< COL; j++){
-           
-            cout << arr[i][j]<<" \t"<<endl; 
-        }
-    }   
-
+    return 0;
 }
-
